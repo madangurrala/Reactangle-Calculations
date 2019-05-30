@@ -1,4 +1,3 @@
-C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\obj\Debug\TestingAssignment1.csprojAssemblyReference.cache
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\obj\Debug\TestingAssignment1.csproj.CoreCompileInputs.cache
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\bin\Debug\TestingAssignment1.exe.config
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\bin\Debug\TestingAssignment1.exe
