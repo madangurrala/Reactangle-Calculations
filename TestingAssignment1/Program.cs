@@ -8,45 +8,71 @@ namespace TestingAssignment1
 {
     class Program
     {
-         static void Main(string[] args)
+        public static String input = string.Empty;
+        public static int length, width, choice;
+        public static void LengthInput()
         {
-            int length, width, option;
-            Rectangle Rect = new Rectangle();
-            String input = string.Empty;
-            do
-            {
-                Console.Write("Enter the Length of Rectangle: ");
-                input = Console.ReadLine();
-            } while (!int.TryParse(input, out length) || (length <= 0));
-
+            Console.Write("\nEnter the Length of Rectangle: ");
+            input = Console.ReadLine();
+         
+            bool lengthResult = !int.TryParse(input, out length);
             if (length <= 0)
             {
-                Console.WriteLine("Please enter the valid input");
+                Console.WriteLine("Please enter the correct input");
+                LengthInput();
             }
 
-            do
-            {
-                Console.Write("Enter the Width of Rectangle: ");
-                input = Console.ReadLine();
-            } while (!int.TryParse(input, out width) || (width <= 0));
+        }
 
+        public static void WidthInput()
+        {
+            Console.Write("\nEnter the Width of Rectangle: ");
+            input = Console.ReadLine();
+            bool widthResult = !int.TryParse(input, out width);
+
+            if (width <= 0)
+            {
+                Console.WriteLine("Please enter the correct input");
+                WidthInput();
+            }
+        }
+        
+        public static void RectangleMenu()
+        {
             Rectangle rectangle = new Rectangle(length, width);
+            bool menuResult = true;
+           
+            while (menuResult == true) {
 
-            while (true)
-            {
-                do
+                Console.WriteLine("\nHere is your Menu Options");
+                Console.WriteLine("\n1.Get Rectangle Length");
+                Console.WriteLine("2.Change Rectangle Length");
+                Console.WriteLine("3.Get Rectangle Width");
+                Console.WriteLine("4.Change Rectangle Width");
+                Console.WriteLine("5.Get Rectangle Perimeter");
+                Console.WriteLine("6.GetRectangle Area");
+                Console.WriteLine("7.Exit");
+
+                Console.WriteLine("\nYou can choose options by entering correct number\n");
+                input = Console.ReadLine();
+
+                if (input != "1" &&
+                    input != "2" &&
+                    input != "3" &&
+                    input != "4" &&
+                    input != "5" &&
+                    input != "6" &&
+                    input != "7")
                 {
-                    Console.WriteLine("1.Get Rectangle Length");
-                    Console.WriteLine("2.Change Rectangle Length");
-                    Console.WriteLine("3.Get Rectangle Width");
-                    Console.WriteLine("4.Change Rectangle Width");
-                    Console.WriteLine("5.Get Rectangle Perimeter");
-                    Console.WriteLine("6.Get Rectangle Area");
-                    Console.WriteLine("7.Exit");
-                    input = Console.ReadLine();
-                } while (!int.TryParse(input, out option) || (option <= 0 && option >= 8));
+                    Console.WriteLine("\nYou have selected an invalid option. Please choose the correct option\n");
+                }
+                else
+                {
+                    menuResult = true;
+                }
 
-                switch (option)
+                bool menu = !int.TryParse(input, out choice);
+                switch (choice)
                 {
                     case 1:
                         Console.WriteLine("Current Length of Rectangle=" + rectangle.GetLength());
@@ -83,7 +109,19 @@ namespace TestingAssignment1
                         Console.WriteLine("Please select a valid option");
                         break;
                 }
+
             }
+            
         }
+        
+    static void Main(string[] args)
+        {
+            LengthInput();
+            WidthInput();
+            RectangleMenu();
+
+            Console.ReadKey();
+        }
+        
     }
 }

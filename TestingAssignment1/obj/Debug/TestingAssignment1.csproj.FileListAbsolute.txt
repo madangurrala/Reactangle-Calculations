@@ -7,3 +7,4 @@ C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\obj\Debug\Test
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\bin\Debug\nunit.framework.dll
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\bin\Debug\nunit.framework.xml
 C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\obj\Debug\TestingAssignment1.csproj.CopyComplete
+C:\Users\madan\source\repos\TestingAssignment1\TestingAssignment1\obj\Debug\TestingAssignment1.csprojAssemblyReference.cache

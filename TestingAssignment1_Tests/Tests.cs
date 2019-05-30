@@ -13,14 +13,14 @@ namespace TestingAssignment1_Tests
     class Tests
     {
         [Test]
-        public void length_isEqual_with_Input() {
+        public void Get_Length_Testing() {
 
             //Arrange
             int l = 5;
             int w = 6;
-            Rectangle rect = new Rectangle(l, w);
+            Rectangle rectangle = new Rectangle(l, w);
             //Act
-            int length = rect.GetLength();
+            int length = rectangle.GetLength();
 
             //Assert
             Assert.AreEqual(length, l);
@@ -34,9 +34,9 @@ namespace TestingAssignment1_Tests
             //Arrange
             int l = 5;
             int w = 6;
-            Rectangle rect = new Rectangle(l, w);
+            Rectangle rectangle = new Rectangle(l, w);
             //Act
-            int length = rect.SetLength(5);
+            int length = rectangle.SetLength(5);
 
             //Assert
             Assert.AreEqual(length, l);
@@ -48,9 +48,9 @@ namespace TestingAssignment1_Tests
             //Arrange
             int l = 15;
             int w = 27;
-            Rectangle rect = new Rectangle(l, w);
+            Rectangle rectangle = new Rectangle(l, w);
             //Act
-            int width = rect.GetWidth();
+            int width = rectangle.GetWidth();
 
             //Assert
             Assert.AreEqual(width, w);
@@ -60,11 +60,9 @@ namespace TestingAssignment1_Tests
         public void Set_Width_Testing()
         {
             //Arrange
-            //int l = 34;
-            //int w = 56;
-            Rectangle rect = new Rectangle(34, 56);
+            Rectangle rectangle = new Rectangle(34, 56);
             //Act
-            int width = rect.GetWidth();
+            int width = rectangle.GetWidth();
 
             //Assert
             Assert.AreEqual(width, 56);
@@ -76,9 +74,9 @@ namespace TestingAssignment1_Tests
             //Arrange
             int l = 34;
             int w = 56;
-            Rectangle rect = new Rectangle(l, w);
+            Rectangle rectangle = new Rectangle(l, w);
             //Act
-            int permiter = rect.GetPerimeter();
+            int permiter = rectangle.GetPerimeter();
 
             //Assert
             Assert.AreEqual(permiter, 180);
@@ -90,9 +88,9 @@ namespace TestingAssignment1_Tests
             //Arrange
             int l = 34;
             int w = 87;
-            Rectangle rect = new Rectangle(l, w);
+            Rectangle rectangle = new Rectangle(l, w);
             //Act
-            int area = rect.GetArea();
+            int area = rectangle.GetArea();
 
             //Assert
             Assert.AreEqual(area, 2958);
