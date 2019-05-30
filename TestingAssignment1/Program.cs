@@ -8,78 +8,82 @@ namespace TestingAssignment1
 {
     class Program
     {
-        public static int ValidateMenuSelection()
+         static void Main(string[] args)
         {
-            string userInput = "";
-            bool validMenuSelect = false;
-
-            while (validMenuSelect == false)
+            int length, width, option;
+            Rectangle Rect = new Rectangle();
+            String input = string.Empty;
+            do
             {
-                Console.WriteLine("1 : Get rectangle length");
-                Console.WriteLine("2 : Change rectangle length");
-                Console.WriteLine("3 : Get rectangle width");
-                Console.WriteLine("4 : Change rectangle width");
-                Console.WriteLine("5 : Get rectangle perimeter");
-                Console.WriteLine("6 : Get rectangle Area");
-                Console.WriteLine("7 : Exit\n");
+                Console.Write("Enter the Length of Rectangle: ");
+                input = Console.ReadLine();
+            } while (!int.TryParse(input, out length) || (length <= 0));
 
-                Console.WriteLine("Please select an option by entering a number\n");
-                userInput = Console.ReadLine();
-
-                if ( userInput != "1" &&
-                    userInput != "2" &&
-                    userInput != "3" &&
-                    userInput != "4" &&
-                    userInput != "5" &&
-                    userInput != "6" &&
-                    userInput != "7"
-                    )
-                {
-                    Console.WriteLine("Please enter the correct number\n");
-                }
-                else
-                {
-                    validMenuSelect = true;
-                }
-
-
-            }
-            Console.WriteLine();
-            return int.Parse(userInput);
-        }
-
-        //INput validation
-     public static int ValidUserInput(string rectSide)
-        {
-            int number = 1;
-            bool isValid = false;
-             while (isValid == false)
+            if (length <= 0)
             {
-                Console.WriteLine("Please enter the {rectSide} of your rectangle:");
-                string userInput = Console.ReadLine();
-                Console.WriteLine();
-
-                bool result = int.TryParse(userInput, out number);
-
-                if (result == false)
-                {
-                    Console.WriteLine("That's not a valid input, please try again\n");
-                }else if(number < 0){
-                    Console.WriteLine("Number can not be less than Zero, please try again");
-                }
-                else
-                {
-                    isValid = true;
-                    Console.WriteLine("");
-                }
-
-                return int.Parse(userInput);
+                Console.WriteLine("Please enter the valid input");
             }
-        }
-        static void Main(string[] args)
-        {
 
-            ValidateMenuSelection();
+            do
+            {
+                Console.Write("Enter the Width of Rectangle: ");
+                input = Console.ReadLine();
+            } while (!int.TryParse(input, out width) || (width <= 0));
+
+            Rectangle rectangle = new Rectangle(length, width);
+
+            while (true)
+            {
+                do
+                {
+                    Console.WriteLine("1.Get Rectangle Length");
+                    Console.WriteLine("2.Change Rectangle Length");
+                    Console.WriteLine("3.Get Rectangle Width");
+                    Console.WriteLine("4.Change Rectangle Width");
+                    Console.WriteLine("5.Get Rectangle Perimeter");
+                    Console.WriteLine("6.Get Rectangle Area");
+                    Console.WriteLine("7.Exit");
+                    input = Console.ReadLine();
+                } while (!int.TryParse(input, out option) || (option <= 0 && option >= 8));
+
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("Current Length of Rectangle=" + rectangle.GetLength());
+                        break;
+                    case 2:
+                        do
+                        {
+                            Console.Write("Enter new Length: ");
+                            input = Console.ReadLine();
+                        } while (!int.TryParse(input, out length) || (length <= 0));
+                        Console.WriteLine("Updated Rectangle Length=" + rectangle.SetLength(length));
+                        break;
+                    case 3:
+                        Console.WriteLine("Current Width of Rectangle=" + rectangle.GetWidth());
+                        break;
+                    case 4:
+                        do
+                        {
+                            Console.Write("Enter new Width: ");
+                            input = Console.ReadLine();
+                        } while (!int.TryParse(input, out width) || (width <= 0));
+                        Console.WriteLine("Updated Rectngle Width=" + rectangle.SetWidth(width));
+                        break;
+                    case 5:
+                        Console.WriteLine("Perimeter of the Rectangle=" + rectangle.GetPerimeter());
+                        break;
+                    case 6:
+                        Console.WriteLine("Area of the Rectangle=" + rectangle.GetArea());
+                        break;
+                    case 7:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Please select a valid option");
+                        break;
+                }
+            }
         }
     }
 }
